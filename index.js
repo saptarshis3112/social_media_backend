@@ -32,12 +32,16 @@ const App = async () => {
   };
 
   await server.register([
-    Inert,
-    Vision,
+    {
+      plugin: Inert,
+    },
+    {
+      plugin: Vision,
+    },
     {
       plugin: HapiSwagger,
       options: swaggerOptions,
-    }
+    },
   ]);
 
   // Middleware to log requested routes.
